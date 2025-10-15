@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "WhoIsMakingMoney.ai - Find Your Next Profitable AI Project",
+    "titleTemplate": "%s | WhoIsMakingMoney.ai",
+    "description": "Explore in-depth case studies of today's fastest-growing AI applications. We reverse-engineer their business models—from consumer hits to pro-level tools—giving you the blueprint to build what's next.",
+    "keywords": "AI products, AI applications, business model analysis, AI tools, consumer AI, professional AI tools, AI success stories, AI project ideas, AI monetization",
+    "openGraph": {
+      "title": "WhoIsMakingMoney.ai: Find Your Next Profitable AI Project",
+      "description": "Explore in-depth case studies of today's fastest-growing AI applications. We reverse-engineer their business models—from consumer hits to pro-level tools—giving you the blueprint to build what's next.",
+      "images": [
+        {
+          "url": "/og-image.webp",
+          "width": 1200,
+          "height": 630,
+          "alt": "WhoIsMakingMoney.ai - AI Product Analysis Platform"
+        }
+      ]
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Find Your Next Profitable AI Project | WhoIsMakingMoney.ai",
+      "description": "Explore in-depth case studies of today's fastest-growing AI applications. We reverse-engineer their business models—from consumer hits to pro-level tools—giving you the blueprint to build what's next.",
+      "images": ["/og-image.webp"]
+    }
+  },
+  "main": {
+    "appName": "WhoIsMakingMoney.ai",
+    "heroTitle": "Find Your Next Profitable AI Project",
+    "heroSubtitle": "Stop Guessing. Start Building.",
+    "latestAnalysisTitle": "Deconstruct The Business Model",
+    "latestAnalysisDescription": "Discover the mechanics behind successful AI products, whether they are subscriptions, credit-based, or unique direct-to-consumer offerings."
+  },
+  "LanguageSwitcher": {
+    "title": "Language Switcher",
+    "english": "English",
+    "chinese": "中文 (简体)"
+  },
+  "Header": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homePage": "Go to WhoIsMakingMoney.ai home page"
+  },
+  "footer": {
+    "allRightsReserved": "All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact"
+  }
+}

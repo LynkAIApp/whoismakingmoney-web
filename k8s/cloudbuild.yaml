@@ -1,0 +1,83 @@
+steps:
+  # 步骤 1: 构建 Docker 镜像
+  - name: 'gcr.io/cloud-builders/docker'
+    id: build-image
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        IMAGE_NAME="${_GKE_REGION}-docker.pkg.dev/${PROJECT_ID}/${_DOCKER_REPOSITORY}/${_PRODUCT}-image:${SHORT_SHA}"
+        echo "IMAGE=$${IMAGE_NAME}"  
+        docker build -t $${IMAGE_NAME} .  
+        cid=$$(docker create $${IMAGE_NAME})  
+        docker cp $$cid:/app/.next/static ./static  
+        docker rm $$cid
+        docker push $${IMAGE_NAME}
+
+ # 步骤 2a: 上传静态资源到 GCS (恢复为您原来的命令)
+  - name: 'gcr.io/cloud-builders/gsutil'
+    id: upload-static-files
+    args:
+      - '-m'
+      - 'cp'
+      - '-r'
+      - './static'
+      - 'gs://${_BUCKET_NAME}/www/whoismakingmoney/_next/'
+
+  # 步骤 2b: 上传public资源到 GCS
+  - name: 'gcr.io/cloud-builders/gsutil'
+    id: upload-public
+    args:
+      - '-m'
+      - 'cp'
+      - '-r'
+      - './public/*'
+      - 'gs://${_BUCKET_NAME}/www/whoismakingmoney/'
+
+  # 步骤 2c: 为上传的资源设置元数据
+  - name: 'gcr.io/cloud-builders/gsutil'
+    id: set-cache-metadata
+    args:
+      - '-m'
+      - 'setmeta'
+      - '-h'
+      - 'Cache-Control:public, max-age=31536000'
+      # 注意：这里的路径需要用单引号括起来，并使用 ** 通配符
+      - 'gs://${_BUCKET_NAME}/www/whoismakingmoney/**'
+
+  # 步骤 3: 替换环境变量并应用deployment.yaml
+  - name: 'alpine'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        apk add --no-cache gettext
+        export PRODUCT=${_PRODUCT}
+        export REPLICAS=${_REPLICAS}
+        export IMAGE_NAME=${_GKE_REGION}-docker.pkg.dev/$PROJECT_ID/${_DOCKER_REPOSITORY}/${_PRODUCT}-image:$SHORT_SHA
+        envsubst < ./k8s/deployment.yaml > ./k8s/deployment_envsubst.yaml
+        cat ./k8s/deployment_envsubst.yaml  # 可选，用于调试
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=${_GKE_REGION}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
+
+  # Step 4: Deploy to GKE Using kubectl Builder
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - 'apply'
+      - '-f'
+      - './k8s/deployment_envsubst.yaml'
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=${_GKE_REGION}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
+#可以在此处配置替换的环境变量，也可以通过https://console.cloud.google.com/cloud-build/triggers创建触发器时配置
+substitutions:
+  _PRODUCT: 'whoismakingmoney-web'
+  _REPLICAS: '1'
+  _DOCKER_REPOSITORY: 'lynkai-docker-repo'
+  _GKE_REGION: 'asia-east2'
+  _GKE_CLUSTER: 'cost-optimized-cluster-hk'
+  _BUCKET_NAME: 'flikr'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${PRODUCT}-service #gateway无法和ingress共用一个service，这里的名字要和ingress对应的区分来创建新的service
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+spec:
+  type: ClusterIP #https://cloud.google.com/kubernetes-engine/docs/concepts/service
+  selector:
+    app: ${PRODUCT}-pod
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: ${PRODUCT}-healthcheck
+spec:
+  default:
+    checkIntervalSec: 5
+    timeoutSec: 5
+    healthyThreshold: 2
+    unhealthyThreshold: 3
+    config:
+      type: HTTP
+      httpHealthCheck:
+        requestPath: /api/health
+        port: 8080
+  targetRef:
+    group: ""
+    kind: Service
+    name: ${PRODUCT}-service
+---
+apiVersion: networking.gke.io/v1
+kind: GCPBackendPolicy
+metadata:
+  name: ${PRODUCT}-backend-policy
+spec:
+  default:
+    timeoutSec: 60 # 后端服务超时时间
+    logging:
+      enabled: true
+      sampleRate: 1000000
+  targetRef:
+    group: ""
+    kind: Service
+    name: ${PRODUCT}-service
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: ${PRODUCT}-gateway
+  annotations:
+    networking.gke.io/certmap: ${PRODUCT}-certmap #参见本文件最后的注释部分的创建命令
+spec:
+  gatewayClassName: gke-l7-global-external-managed
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+      allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: ${PRODUCT}-route
+spec:
+  parentRefs:
+    - name: ${PRODUCT}-gateway
+  rules:
+    - matches:
+        - path:
+            value: /
+      backendRefs:
+        - name: ${PRODUCT}-service
+          port: 8080
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: ${PRODUCT}-pdb
+spec:
+  minAvailable: 1  # 至少保证一个容器存在
+  selector:
+    matchLabels:
+      app: ${PRODUCT}-pod
+# 需要在k8s cluster详情页开启Gateway API
+# gcloud certificate-manager maps create whoismakingmoney-web-certmap
+# whoismakingmoney.ai
+# gcloud certificate-manager maps entries create whoismakingmoney-web-certmap-entry-www --map=whoismakingmoney-web-certmap --hostname=www.whoismakingmoney.ai --certificates=whoismakingmoney-web-certificate
+# gcloud certificate-manager maps entries create whoismakingmoney-web-certmap-entry-apex --map=whoismakingmoney-web-certmap --hostname=whoismakingmoney.ai --certificates=whoismakingmoney-web-certificate
+
+# gcloud certificate-manager maps describe whoismakingmoney-web-certmap
+# gcloud certificate-manager maps entries list --map=whoismakingmoney-web-certmap
+# 如果遇到没有权限的情况，需要为跳板机的账号临时增加Certificate Manager Owner角色权限
+# 部署gateway
+# env PRODUCT=whoismakingmoney-web envsubst < k8s/gateway.yaml | kubectl apply -f -
+# kubectl describe gateway whoismakingmoney-web-gateway
+
+# 验证方式
+# curl -v --resolve www.whoismakingmoney.ai:443:34.117.125.91 https://www.whoismakingmoney.ai/api/health

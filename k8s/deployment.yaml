@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${PRODUCT}-deployment
+spec:
+  replicas: ${REPLICAS}
+  minReadySeconds: 0 # 最小就绪时间, 用于控制滚动升级的速度, 默认为 0, pod 启动成功后，等待 ${minReadySeconds} 后才会被认为是就绪状态，才会被服务发现
+  strategy: # 滚动升级策略, 默认为 RollingUpdate
+    type: RollingUpdate
+    rollingUpdate: # 如果期望 一上然后一下，可以配置 maxSurge: 1, maxUnavailable: 0
+      maxSurge: 1 # 和期望ready的副本数比，不可用副本数最大比例（或最大值），这个值越小，越能保证服务稳定，更新越平滑；
+      maxUnavailable: 0 # 和期望ready的副本数比，超过期望副本数最大比例（或最大值），这个值调的越大，副本更新速度越快。
+  selector:
+    matchLabels:
+      app: ${PRODUCT}-pod
+  template:
+    metadata:
+      labels:
+        app: ${PRODUCT}-pod
+    spec:
+      terminationGracePeriodSeconds: 30  # 总关闭容忍时间
+      containers:
+        - name: ${PRODUCT}-container
+          image: ${IMAGE_NAME}
+          imagePullPolicy: IfNotPresent # 每次Pod启动拉取镜像策略Always，每次都检查；Never，每次都不检查（不管本地是否有）；IfNotPresent，如果本地有就不检查，如果没有就拉取
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "/bin/sh", "-c", "sleep 20s" ]
+          # 资源管理
+          resources:
+            limits: # 最大使用
+              cpu: 1000m
+              # CPU，1核心 = 1000m, 这里的cpu需求最好不要是能被1000整除的，
+              # 原因是比如云主机node是300m cpu，如果申请的正好是300m cpu，可能一台机器都放不下一个服务
+              memory: 768Mi # 内存，1G = 1024Mi
+            requests: # 容器运行时，最低资源需求，也就是说最少需要多少资源容器才能正常运行
+              cpu: 200m
+              memory: 256Mi
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "8080"
+          livenessProbe:
+            httpGet: # 通过http get检查健康，返回200-399之间，则认为容器正常
+              path: /api/health # URI地址
+              port: 8080 # 端口
+              scheme: HTTP # 协议
+              # host: 127.0.0.1 # 主机地址
+            initialDelaySeconds: 30 # 表明第一次检测在容器启动后多长时间后开始
+            timeoutSeconds: 5 # 检测的超时时间
+            periodSeconds: 30 # 检查间隔时间
+            successThreshold: 1 # 成功门槛
+            failureThreshold: 5 # 失败门槛，连接失败5次，pod杀掉，重启一个新的pod
+          # Pod 准备服务健康检查设置
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30 # 表明第一次检测在容器启动后多长时间后开始
+            timeoutSeconds: 5 # 检测的超时时间
+            periodSeconds: 30 # 检查间隔时间
+            successThreshold: 1 # 成功门槛
+            failureThreshold: 5 # 失败门槛，连接失败5次，pod杀掉，重启一个新的pod
+          ports:
+            - name: http # 名称
+              containerPort: 8080 # 容器开发对外的端口
+              protocol: TCP # 协议
+          volumeMounts:
+            - name: server-log
+              mountPath: /app/logs
+      volumes:
+        - name: server-log
+          emptyDir:
+            sizeLimit: "2Gi"

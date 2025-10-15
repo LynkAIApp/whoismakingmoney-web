@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "WhoIsMakingMoney.ai - 找到你的下一个可盈利AI项目",
+    "titleTemplate": "%s | WhoIsMakingMoney.ai",
+    "description": "深入探索当下增长最快的AI应用案例。我们逆向工程它们的商业模式——从爆款C端产品到专业级工具——为你提供构建未来的蓝图。",
+    "keywords": "AI产品, AI应用, 商业模式分析, AI工具, 消费者AI, 专业AI工具, AI成功案例, AI项目创意, AI变现",
+    "openGraph": {
+      "title": "WhoIsMakingMoney.ai: 找到你的下一个可盈利AI项目",
+      "description": "深入探索当下增长最快的AI应用案例。我们逆向工程它们的商业模式——从爆款C端产品到专业级工具——为你提供构建未来的蓝图。",
+      "images": [
+        {
+          "url": "/og-image.webp",
+          "width": 1200,
+          "height": 630,
+          "alt": "WhoIsMakingMoney.ai - AI产品分析平台"
+        }
+      ]
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "找到你的下一个可盈利AI项目 | WhoIsMakingMoney.ai",
+      "description": "深入探索当下增长最快的AI应用案例。我们逆向工程它们的商业模式——从爆款C端产品到专业级工具——为你提供构建未来的蓝图。",
+      "images": ["/og-image.webp"]
+    }
+  },
+  "main": {
+    "appName": "WhoIsMakingMoney.ai",
+    "heroTitle": "找到你的下一个可盈利AI项目",
+    "heroSubtitle": "别再猜了，直接构建。",
+    "latestAnalysisTitle": "解构商业模式",
+    "latestAnalysisDescription": "探索成功AI产品背后的机制，无论是订阅制、点数制，还是独特的直面消费者模式。"
+  },
+  "analysis": {
+    "pitchbob": {
+      "tagline": "AI商业计划书生成器 & 创业者的智能助手。",
+      "coreFunction": "帮助创始人创建专业的商业计划书。用户输入他们的想法，AI生成涵盖商业模式、市场分析和财务预测的幻灯片。它还充当智能助手来完善内容。",
+      "targetAudience": "早期创业创始人、企业家和商业竞赛中的学生。",
+      "businessModel": "提供一次性购买和订阅计划的混合模式。直接链接到Stripe的'立即购买'锚文本表明了一个清晰、即时的交易模式，可能吸引需要快速获得高质量商业计划书的用户。"
+    },
+    "aishortslab": {
+      "tagline": "几分钟内创建病毒式短视频 & AI用户生成内容。",
+      "coreFunction": "一个AI驱动的工具，将长内容（如播客或网络研讨会）转换为适合TikTok、Reels和YouTube Shorts等平台的引人入胜、可分享的短视频。它自动化编辑、字幕和格式化。",
+      "targetAudience": "内容创作者、社交媒体经理、播客主和营销机构。",
+      "businessModel": "一个直接的SaaS模式。链接到Stripe支付页面的'开始使用'按钮的存在表明了一种基于订阅的方法，可能按每月处理的视频数量或分钟数分层。它直接服务于蓬勃发展的创作者经济。"
+    },
+    "assistai": {
+      "tagline": "您的WhatsApp AI助手，专为拉丁美洲市场定制。",
+      "coreFunction": "提供直接与WhatsApp集成的AI聊天机器人。它可以用西班牙语和葡萄牙语回答客户查询、提供信息并自动化对话，针对当地细微差别进行定制。",
+      "targetAudience": "严重依赖WhatsApp进行客户沟通的拉丁美洲（LATAM）中小型企业。",
+      "businessModel": "地理细分市场的绝佳例子。'.lat'域名和西班牙语锚文本（'Obtener plan' - 获取计划）清楚地表明了其市场重点。这个SaaS可能根据对话或联系人数量收取月费，解决了超本地化的业务需求。"
+    }
+  },
+  "LanguageSwitcher": {
+    "title": "语言切换器",
+    "english": "English",
+    "chinese": "中文 (简体)"
+  },
+  "Header": {
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "homePage": "前往WhoIsMakingMoney.ai首页"
+  },
+  "footer": {
+    "allRightsReserved": "版权所有。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "contact": "联系我们"
+  }
+}
