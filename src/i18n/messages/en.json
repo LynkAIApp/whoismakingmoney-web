@@ -1,5 +1,6 @@
 {
   "metadata": {
+    "siteName": "WhoIsMakingMoney.ai",
     "title": "WhoIsMakingMoney.ai - Find Your Next Profitable AI Project",
     "titleTemplate": "%s | WhoIsMakingMoney.ai",
     "description": "Explore in-depth case studies of today's fastest-growing AI applications. We reverse-engineer their business models—from consumer hits to pro-level tools—giving you the blueprint to build what's next.",
@@ -25,6 +26,7 @@
   },
   "main": {
     "appName": "WhoIsMakingMoney.ai",
+    "platformTag": "AI Product Analysis Platform",
     "heroTitle": "Find Your Next Profitable AI Project",
     "heroSubtitle": "Stop Guessing. Start Building.",
     "latestAnalysisTitle": "Deconstruct The Business Model",
@@ -75,5 +77,13 @@
     "retryLogin": "Retry Login",
     "back_home": "Back to Home",
     "loading": "Loading..."
+  },
+  "lockedCard": {
+    "signInToUnlock": "Sign in to unlock detailed analysis",
+    "signInButton": "Sign In to Unlock"
+  },
+  "userMenu": {
+    "signIn": "Sign In",
+    "signOut": "Sign out"
   }
 }

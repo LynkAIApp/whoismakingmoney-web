@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://whoismakingmoney.ai/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block access to admin and private areas
+Disallow: /api/
+Disallow: /auth/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow access to public assets
+Allow: /images/
+Allow: /favicon.ico
+Allow: /icon-*.svg

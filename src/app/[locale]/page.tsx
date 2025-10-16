@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getAnalysisContent } from '@/lib/content';
 import { LockedCard } from '@/components/ui/locked-card';
+import { StructuredData } from '@/components/structured-data';
 
 export const dynamic = 'force-dynamic'
 
@@ -17,7 +18,19 @@ export default async function Home({
   const analysisContent = await getAnalysisContent(locale);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <>
+      <StructuredData 
+        type="article" 
+        locale={locale}
+        data={{
+          title: t('heroTitle'),
+          description: t('latestAnalysisDescription'),
+          url: `https://whoismakingmoney.ai${locale === 'zh' ? '/zh' : ''}`,
+          datePublished: new Date().toISOString(),
+          dateModified: new Date().toISOString()
+        }} 
+      />
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         {/* Background Pattern */}
@@ -32,7 +45,7 @@ export default async function Home({
                   <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  AI Product Analysis Platform
+                  {t('platformTag')}
                 </div>
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
                   <span className="block">{t('heroTitle')}</span>
@@ -73,6 +86,7 @@ export default async function Home({
           </div>
         </section>
       )}
-    </main>
+      </main>
+    </>
   );
 }

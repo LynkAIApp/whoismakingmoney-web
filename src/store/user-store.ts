@@ -15,7 +15,7 @@ interface UserState {
 
 export const useUserStore = create<UserState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       user: null,
       isLoading: false,
       lastLoginTime: null,

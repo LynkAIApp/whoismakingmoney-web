@@ -12,16 +12,18 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { LogIn, LogOut } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function UserMenu() {
   const { user, signOut } = useAuth()
   const { openLoginModal } = useLoginModalStore()
+  const t = useTranslations('userMenu')
 
   if (!user) {
     return (
       <Button variant="outline" size="sm" onClick={() => openLoginModal()}>
         <LogIn className="h-4 w-4 mr-2" />
-        Sign In
+        {t('signIn')}
       </Button>
     )
   }
@@ -54,7 +56,7 @@ export function UserMenu() {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>
           <LogOut className="mr-2 h-4 w-4" />
-          <span>Sign out</span>
+          <span>{t('signOut')}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,17 +1,24 @@
 import type { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getLegalDocument } from '@/lib/content';
+import { generateHreflangAlternates } from '@/lib/hreflang';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const doc = await getLegalDocument('terms', locale);
+  const hreflangAlternates = generateHreflangAlternates({ locale, path: 'terms' });
+  
   if (!doc) {
-    return { title: 'Terms of Service' };
+    return { 
+      title: 'Terms of Service',
+      alternates: hreflangAlternates,
+    };
   }
   return {
     title: doc.frontmatter.title,
     description: doc.frontmatter.description,
+    alternates: hreflangAlternates,
   };
 }
 

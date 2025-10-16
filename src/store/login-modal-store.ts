@@ -14,7 +14,7 @@ interface LoginModalStore {
 
 export const useLoginModalStore = create<LoginModalStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       isLoginModalOpen: false,
       currentImageUrl: null,
       lastLoginAttempt: null,

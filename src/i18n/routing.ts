@@ -5,6 +5,28 @@ import { createNavigation } from 'next-intl/navigation';
 export const supportedLocales = ['en', 'zh'] as const;
 export const defaultLocale = 'en' as const;
 
+// Language configuration for locale-specific metadata
+export const localeConfig = {
+  en: {
+    countryCode: 'US',
+    openGraphLocale: 'en_US'
+  },
+  zh: {
+    countryCode: 'CN', 
+    openGraphLocale: 'zh_CN'
+  }
+} as const;
+
+// Helper functions for locale operations
+export function getCountryCode(locale: string): string {
+  return localeConfig[locale as keyof typeof localeConfig]?.countryCode || 'US';
+}
+
+export function getOpenGraphLocale(locale: string): string {
+  return localeConfig[locale as keyof typeof localeConfig]?.openGraphLocale || 'en_US';
+}
+
+
 export const routing = defineRouting({
   // A list of all locales that are supported
   locales: supportedLocales,

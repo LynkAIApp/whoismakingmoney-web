@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/lib/auth-context'
 import { useLoginModalStore } from '@/store/login-modal-store'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 interface LockedCardProps {
@@ -13,6 +14,7 @@ export function LockedCard({ children, lockedContent }: LockedCardProps) {
   const { user } = useAuth()
   const { openLoginModal } = useLoginModalStore()
   const [isClient, setIsClient] = useState(false)
+  const t = useTranslations('lockedCard')
 
   useEffect(() => {
     setIsClient(true)
@@ -33,12 +35,12 @@ export function LockedCard({ children, lockedContent }: LockedCardProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Sign in to unlock detailed analysis</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{t('signInToUnlock')}</p>
               <button 
                 onClick={() => openLoginModal()}
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
               >
-                Sign In to Unlock
+                {t('signInButton')}
               </button>
             </div>
           </div>
@@ -66,12 +68,12 @@ export function LockedCard({ children, lockedContent }: LockedCardProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Sign in to unlock detailed analysis</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{t('signInToUnlock')}</p>
             <button 
               onClick={() => openLoginModal()}
               className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
             >
-              Sign In to Unlock
+              {t('signInButton')}
             </button>
           </div>
         </div>

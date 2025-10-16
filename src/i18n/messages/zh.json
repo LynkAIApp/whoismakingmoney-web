@@ -1,5 +1,6 @@
 {
   "metadata": {
+    "siteName": "WhoIsMakingMoney.ai",
     "title": "WhoIsMakingMoney.ai - 找到你的下一个可盈利AI项目",
     "titleTemplate": "%s | WhoIsMakingMoney.ai",
     "description": "深入探索当下增长最快的AI应用案例。我们逆向工程它们的商业模式——从爆款C端产品到专业级工具——为你提供构建未来的蓝图。",
@@ -25,6 +26,7 @@
   },
   "main": {
     "appName": "WhoIsMakingMoney.ai",
+    "platformTag": "AI产品分析平台",
     "heroTitle": "找到你的下一个可盈利AI项目",
     "heroSubtitle": "别再猜了，直接构建。",
     "latestAnalysisTitle": "解构商业模式",
@@ -95,5 +97,13 @@
     "retryLogin": "重试登录",
     "back_home": "返回首页",
     "loading": "加载中..."
+  },
+  "lockedCard": {
+    "signInToUnlock": "登录以解锁详细分析",
+    "signInButton": "登录解锁"
+  },
+  "userMenu": {
+    "signIn": "登录",
+    "signOut": "退出登录"
   }
 }

@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+  compress: true,
+  poweredByHeader: false,
   env: {
     NEXT_PUBLIC_CDN_URL: process.env.NEXT_PUBLIC_CDN_URL,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
