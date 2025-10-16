@@ -1,7 +1,10 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { Toaster } from '@/components/ui/toaster';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { AuthProvider } from '@/lib/auth-context';
+import AuthProviderComponent from '@/components/auth-provider';
 
 export default async function LocaleLayout({
   children,
@@ -10,18 +13,22 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  await params; // 确保params被解析，即使我们不使用locale
-  const messages = await getMessages();
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
-      </div>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <AuthProvider>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer locale={locale} />
+          <Toaster />
+          <AuthProviderComponent />
+        </div>
+      </AuthProvider>
     </NextIntlClientProvider>
   );
 }

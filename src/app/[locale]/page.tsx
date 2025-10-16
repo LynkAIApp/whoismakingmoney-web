@@ -1,6 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getAnalysisContent } from '@/lib/content';
+import { LockedCard } from '@/components/ui/locked-card';
+
+export const dynamic = 'force-dynamic'
 
 export default async function Home({
   params
@@ -61,7 +64,12 @@ export default async function Home({
               </p>
             </div>
             
-            <MDXRemote source={analysisContent.content} />
+            <MDXRemote 
+              source={analysisContent.content} 
+              components={{
+                LockedCard,
+              }}
+            />
           </div>
         </section>
       )}

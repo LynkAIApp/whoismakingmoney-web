@@ -3,7 +3,10 @@ title: "AI产品分析"
 description: "AI驱动产品及其货币化策略的最新分析"
 ---
 
+import { LockedCard } from '../../components/ui/locked-card'
+
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  {/* Case 1: PitchBob.io (Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -16,7 +19,7 @@ description: "AI驱动产品及其货币化策略的最新分析"
       <div>
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">PitchBob.io</h3>
         <div className="text-sm text-green-600 dark:text-green-400">
-          用于创建**投资级**商业企划书的AI副驾。
+          用于创建投资级商业企划书的AI副驾。
         </div>
       </div>
     </div>
@@ -38,6 +41,7 @@ description: "AI驱动产品及其货币化策略的最新分析"
     </div>
   </div>
 
+  {/* Case 2: AI Shorts Lab (Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -67,11 +71,12 @@ description: "AI驱动产品及其货币化策略的最新分析"
       
       <div>
         <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
-        <div className="text-sm text-gray-600 dark:text-gray-300">针对<strong>创作者经济</strong>的<strong>基于积分、按需付费</strong>系统。用户购买视频处理分钟数的积分，为个人创作者和机构提供灵活性，无需固定月费承诺。</div>
+        <div className="text-sm text-gray-600 dark:text-gray-300">针对<strong>创作者经济</strong>的<strong>基于积分、按需付费</strong>系统。用户购买视频处理分钟数的积分，为个人创作者提供灵活性，无需固定月费承诺。</div>
       </div>
     </div>
   </div>
 
+  {/* Case 3: AssistAI.Lat (Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -105,4 +110,262 @@ description: "AI驱动产品及其货币化策略的最新分析"
       </div>
     </div>
   </div>
+
+  {/* Locked Content - Collapsed */}
+  <LockedCard
+    lockedContent={
+      <div className="text-center py-8">
+        <div className="mb-4">
+          <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">7个更多AI项目</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
+          解锁7个额外盈利AI项目的详细商业模式分析
+        </p>
+        <div className="text-sm text-gray-500 dark:text-gray-400">
+          登录解锁详细分析
+        </div>
+      </div>
+    }
+  >
+    {/* Case 4: There's An AI For That */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/theresanaiforthat-logo.svg"
+            alt="There's An AI For That logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">There's An AI For That</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            最大的AI工具数据库。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">跨各种类别的AI工具综合目录和搜索引擎，帮助用户发现适合其需求的AI解决方案。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">寻找AI工具解决特定问题或增强工作流程的企业、开发者和个人。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">主要是<strong>联盟营销</strong>和<strong>广告收入</strong>。通过成为AI工具的首选目录，他们可以通过推荐佣金和赞助列表实现货币化。经典的<strong>市场中介</strong>模式。</div>
+      </div>
+    </div>
+
+    {/* Case 5: LiteLLM */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/github-logo.svg"
+            alt="LiteLLM logo"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">LiteLLM</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            调用100多个大语言模型的通用API。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">统一API，抽象不同LLM提供商的复杂性，让开发者轻松在不同模型和提供商之间切换。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">构建AI应用的开发者和公司，希望在选择LLM提供商时具有灵活性，避免供应商锁定。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">开源，提供<strong>企业支持</strong>和<strong>托管服务</strong>。通过高级功能、托管服务和企业支持合同实现货币化。<strong>开发者工具</strong>模式，具有免费增值层级。</div>
+      </div>
+    </div>
+
+    {/* Case 6: Job Board SEO Guide */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/jobboardseoguide-logo.svg"
+            alt="Job Board SEO Guide logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Job Board SEO Guide</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            专业课程：如何为招聘网站获得35万+月点击量。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">专门针对招聘网站的SEO优化课程，教授如何通过搜索引擎优化获得大量有机流量。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">招聘网站所有者、数字营销人员和希望提高网站流量的企业家。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">基于<strong>数字产品</strong>的<strong>一次性销售</strong>模式。通过专业知识和经验包装成高价值课程，实现知识货币化。这是<strong>内容创作者</strong>和<strong>专家</strong>的典型商业模式。</div>
+      </div>
+    </div>
+
+    {/* Case 7: Sellerhook */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/sellerhook-logo.svg"
+            alt="Sellerhook logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Sellerhook</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            为电商卖家提供AI驱动的产品研究。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">使用AI分析市场趋势、竞争产品和销售数据，为电商卖家提供产品研究和市场洞察。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">亚马逊卖家、电商企业家和在线零售商，需要数据驱动的产品决策支持。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">基于<strong>订阅</strong>的<strong>SaaS模式</strong>，为电商卖家提供持续的产品研究服务。通过AI驱动的洞察帮助卖家做出更好的商业决策，实现<strong>数据即服务</strong>的货币化。</div>
+      </div>
+    </div>
+
+    {/* Case 8: SnapCalorie */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/snapcalorie-logo.svg"
+            alt="SnapCalorie logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">SnapCalorie</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            通过API从食物照片计算卡路里和宏量营养素。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">使用计算机视觉和机器学习分析食物照片，自动识别食物类型并计算营养成分。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">健康应用开发者、营养师、健身爱好者和希望跟踪饮食的个人用户。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">基于<strong>API使用量</strong>的<strong>按需付费</strong>模式。开发者根据API调用次数付费，为健康应用提供核心功能。这是<strong>B2B API服务</strong>的典型模式。</div>
+      </div>
+    </div>
+
+    {/* Case 9: Wagnardsoft */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/wagnardsoft-logo.svg"
+            alt="Wagnardsoft logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Wagnardsoft</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            为PC游戏玩家和高级用户提供的流行系统优化工具（DDU、ISLC）。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">提供专业的系统优化工具，包括显卡驱动卸载工具（DDU）和内存清理工具（ISLC），帮助用户解决系统性能问题。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">PC游戏玩家、系统管理员、技术爱好者和遇到系统性能问题的用户。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">基于<strong>免费工具</strong>的<strong>社区驱动</strong>模式。通过提供高质量的免费工具建立用户社区，通过捐赠、高级支持和相关服务实现货币化。这是<strong>开源工具</strong>的典型商业模式。</div>
+      </div>
+    </div>
+
+    {/* Case 10: RTSP.ME */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/rtsp-logo.svg"
+            alt="RTSP.ME logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">RTSP.ME</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            将IP摄像头视频流传输到网站的简单服务。
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">核心功能：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">提供简单的API服务，将IP摄像头的RTSP视频流转换为可在网页中播放的格式，解决摄像头集成到网站的技术难题。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">目标受众：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">网站开发者、监控系统集成商、安全公司和小企业主，需要将摄像头视频集成到网站中。</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">商业模式：</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">基于<strong>API使用量</strong>的<strong>按需付费</strong>模式。开发者根据视频流处理量付费，为网站提供摄像头集成服务。这是<strong>基础设施即服务</strong>的典型模式。</div>
+      </div>
+    </div>
+  </LockedCard>
 </div>

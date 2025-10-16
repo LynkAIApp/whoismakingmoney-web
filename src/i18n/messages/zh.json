@@ -65,5 +65,35 @@
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
     "contact": "联系我们"
+  },
+  "auth": {
+    "title": "登录",
+    "welcome_back": "欢迎回来！请登录以继续",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败",
+    "loginFailedDescription": "无效的登录凭据。请检查您的邮箱和密码，然后重试。",
+    "signUpSuccess": "账户创建成功",
+    "checkEmailForVerification": "请检查您的邮箱以获取验证链接",
+    "form": {
+      "googleSignIn": "使用 Google 继续",
+      "or": "或",
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "请输入您的邮箱",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "请输入您的密码",
+      "loginButton": "登录",
+      "createAccountButton": "创建账户",
+      "toggleToSignUp": "没有账户？注册",
+      "toggleToLogin": "已有账户？登录"
+    }
+  },
+  "error": {
+    "title": "登录遇到问题",
+    "description": "很抱歉，登录过程中出现了问题。请重试或联系我们的客服团队。",
+    "supportText": "请重试或联系我们的客服团队：",
+    "supportEmail": "support@whoismakingmoney.ai",
+    "retryLogin": "重试登录",
+    "back_home": "返回首页",
+    "loading": "加载中..."
   }
 }

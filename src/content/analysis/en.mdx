@@ -3,7 +3,10 @@ title: "AI Product Analysis"
 description: "Latest analysis of AI-powered products and their monetization strategies"
 ---
 
+import { LockedCard } from '../../components/ui/locked-card'
+
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  {/* Case 1: PitchBob.io (Always Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -38,6 +41,7 @@ description: "Latest analysis of AI-powered products and their monetization stra
     </div>
   </div>
 
+  {/* Case 2: AI Shorts Lab (Always Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -67,11 +71,12 @@ description: "Latest analysis of AI-powered products and their monetization stra
       
       <div>
         <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
-        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>credit-based, pay-as-you-go</strong> system targeting the <strong>creator economy</strong>. Users purchase credits for video processing minutes, offering flexibility for individual creators and agencies without a fixed monthly commitment.</div>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>credit-based, pay-as-you-go</strong> system targeting the <strong>creator economy</strong>. Users purchase credits for video processing minutes, offering flexibility for individual creators without a fixed monthly commitment.</div>
       </div>
     </div>
   </div>
 
+  {/* Case 3: AssistAI.Lat (Always Visible) */}
   <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
     <div className="flex items-center space-x-3 mb-4">
       <div className="relative w-12 h-12">
@@ -96,7 +101,7 @@ description: "Latest analysis of AI-powered products and their monetization stra
       
       <div>
         <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
-        <div className="text-sm text-gray-600 dark:text-gray-300">E-commerce businesses, SaaS companies, and service providers operating in Latin America who need scalable customer support solutions.</div>
+        <div className="text-sm text-gray-600 dark:text-gray-300">SMBs in Latin America (LATAM) that heavily rely on WhatsApp for customer communication.</div>
       </div>
       
       <div>
@@ -105,4 +110,262 @@ description: "Latest analysis of AI-powered products and their monetization stra
       </div>
     </div>
   </div>
+
+  {/* Locked Content - Collapsed */}
+  <LockedCard
+    lockedContent={
+      <div className="text-center py-8">
+        <div className="mb-4">
+          <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">7 More AI Projects</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
+          Unlock detailed business model analysis for 7 additional profitable AI projects
+        </p>
+        <div className="text-sm text-gray-500 dark:text-gray-400">
+          Sign in to unlock detailed analysis
+        </div>
+      </div>
+    }
+  >
+    {/* Case 4: There's An AI For That */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/theresanaiforthat-logo.svg"
+            alt="There's An AI For That logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">There's An AI For That</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            The largest database of AI tools.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A comprehensive directory and search engine for AI tools across various categories, helping users discover the right AI solution for their needs.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Businesses, developers, and individuals looking for AI tools to solve specific problems or enhance their workflows.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Primarily <strong>affiliate marketing</strong> and <strong>advertising revenue</strong>. By becoming the go-to directory for AI tools, they can monetize through referral commissions and sponsored listings. A classic <strong>marketplace intermediary</strong> model.</div>
+      </div>
+    </div>
+
+    {/* Case 5: LiteLLM */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/github-logo.svg"
+            alt="LiteLLM logo"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">LiteLLM</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            A universal API to call over 100 Large Language Models.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A unified API that abstracts away the complexity of different LLM providers, allowing developers to easily switch between models and providers.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Developers and companies building AI applications who want flexibility in choosing LLM providers without vendor lock-in.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Open source with <strong>enterprise support</strong> and <strong>hosted services</strong>. They monetize through premium features, managed hosting, and enterprise support contracts. A <strong>developer tools</strong> model with freemium tiers.</div>
+      </div>
+    </div>
+
+    {/* Case 6: Job Board SEO Guide */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/jobboardseoguide-logo.svg"
+            alt="Job Board SEO Guide logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Job Board SEO Guide</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            A specialized course teaching how to get 350k+ monthly clicks to a job board.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A comprehensive course that teaches SEO strategies specifically tailored for job board websites, including content optimization, technical SEO, and link building.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Job board owners, digital marketers, and entrepreneurs looking to scale their job board traffic through organic search.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>one-time course purchase</strong> model. By sharing proven strategies that led to 350k+ monthly clicks, they can charge premium prices for specialized knowledge. A <strong>digital education</strong> model with high perceived value.</div>
+      </div>
+    </div>
+
+    {/* Case 7: Sellerhook */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/sellerhook-logo.svg"
+            alt="Sellerhook logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Sellerhook</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            AI-powered product research for e-commerce sellers.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">AI-driven product research tool that analyzes market trends, competition, and profitability to help e-commerce sellers identify winning products.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">E-commerce sellers, Amazon FBA sellers, dropshippers, and online retailers looking to optimize their product selection.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>subscription-based SaaS</strong> model with tiered pricing. They monetize through monthly/annual subscriptions, with higher tiers offering more advanced features and data access. A <strong>B2B tool</strong> for e-commerce optimization.</div>
+      </div>
+    </div>
+
+    {/* Case 8: SnapCalorie */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/snapcalorie-logo.svg"
+            alt="SnapCalorie logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">SnapCalorie</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            Calorie and macro counting from food photos via an API.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">AI-powered app that automatically calculates calories and nutritional information by analyzing photos of food, eliminating manual input.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Health-conscious individuals, fitness enthusiasts, and people tracking their diet who want a more convenient way to log meals.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>freemium mobile app</strong> with premium subscriptions. Free users get limited scans, while premium users get unlimited scans and advanced features. A <strong>consumer health app</strong> model with recurring revenue.</div>
+      </div>
+    </div>
+
+    {/* Case 9: Wagnardsoft */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/wagnardsoft-logo.svg"
+            alt="Wagnardsoft logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Wagnardsoft</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            Popular system optimization tools for PC gamers and power users (DDU, ISLC).
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">AI-driven Windows optimization software that automatically tunes system performance, cleans unnecessary files, and optimizes settings for better performance.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Windows users, gamers, and professionals who want to optimize their system performance without manual configuration.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>freemium software</strong> model with premium licenses. Free version offers basic optimization, while premium versions provide advanced AI features and priority support. A <strong>consumer software</strong> model with one-time purchases and upgrades.</div>
+      </div>
+    </div>
+
+    {/* Case 10: RTSP.ME */}
+    <div className="h-full hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="relative w-12 h-12">
+          <img
+            src="/images/logos/rtsp-logo.svg"
+            alt="RTSP.ME logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">RTSP.ME</h3>
+          <div className="text-sm text-green-600 dark:text-green-400">
+            A simple service for streaming video from IP cameras to websites.
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Core Function:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">AI-powered platform for analyzing and monitoring RTSP video streams, providing real-time insights and automated alerts for stream quality and performance.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Target Audience:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">Video streaming companies, security system operators, IoT device manufacturers, and businesses relying on RTSP streams for monitoring.</div>
+      </div>
+      
+      <div>
+        <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-2">Business Model:</h4>
+        <div className="text-sm text-gray-600 dark:text-gray-300">A <strong>B2B SaaS</strong> model with usage-based pricing. They charge based on the number of streams monitored and analysis features used. A <strong>enterprise monitoring</strong> model targeting businesses with critical video infrastructure needs.</div>
+      </div>
+    </div>
+  </LockedCard>
 </div>

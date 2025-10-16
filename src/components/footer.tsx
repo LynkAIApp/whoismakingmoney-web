@@ -1,10 +1,8 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
 
-export function Footer() {
-  const t = useTranslations('footer');
-  const locale = useLocale();
+export async function Footer({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'footer' });
 
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
@@ -12,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <div className="flex flex-col items-center space-y-2 md:flex-row md:space-y-0 md:space-x-4">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              © 2024 WhoIsMakingMoney.ai. {t('allRightsReserved')}
+              © 2025 WhoIsMakingMoney.ai. {t('allRightsReserved')}
             </p>
           </div>
           

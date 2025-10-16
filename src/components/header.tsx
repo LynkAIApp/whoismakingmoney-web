@@ -11,6 +11,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { UserMenu } from "@/components/user-menu";
 
 export function Header() {
   const t = useTranslations('main');
@@ -44,6 +45,7 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             <LanguageSwitcher />
+            <UserMenu />
 
             {/* Mobile menu button */}
             <div className="md:hidden">
