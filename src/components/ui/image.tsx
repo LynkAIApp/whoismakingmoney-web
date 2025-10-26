@@ -25,10 +25,16 @@ export function CustomImage({
   blurDataURL,
   ...props
 }: CustomImageProps) {
+  // 如果src已经是完整URL（包含http://或https://），直接使用
+  // 否则拼接CDN前缀
+  const imageSrc = src.startsWith('http://') || src.startsWith('https://') 
+    ? src 
+    : `${process.env.NEXT_PUBLIC_CDN_URL || ""}${src}`;
+
   return (
     <span className={cn("relative inline-block overflow-hidden rounded-lg shadow-lg my-6", className)} style={{ display: 'block' }}>
       <NextImage
-        src={src}
+        src={imageSrc}
         alt={alt}
         width={width || 800}
         height={height || 400}
