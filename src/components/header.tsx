@@ -14,7 +14,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { UserMenu } from "@/components/user-menu";
 
 export function Header() {
-  const t = useTranslations('main');
+  const t = useTranslations('homePage');
   const tHeader = useTranslations('Header');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

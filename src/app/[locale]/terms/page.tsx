@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getLegalDocument } from '@/lib/content';
 import { generateHreflangAlternates } from '@/lib/hreflang';
 import Link from 'next/link';
+import remarkGfm from 'remark-gfm';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -48,7 +49,7 @@ const TermsPage = async ({ params }: { params: Promise<{ locale: string }> }) =>
             <MDXRemote
               source={doc.content}
               components={components}
-              options={{ mdxOptions: { remarkPlugins: [], rehypePlugins: [] } }}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [] } }}
             />
           </article>
         </div>

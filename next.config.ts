@@ -1,7 +1,15 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
 import type { NextConfig } from "next";
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [remarkGfm],
+  },
+});
 
 const nextConfig: NextConfig = {
   devIndicators: false,
@@ -41,4 +49,4 @@ const nextConfig: NextConfig = {
   generateEtags: true,
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(withMDX(nextConfig));

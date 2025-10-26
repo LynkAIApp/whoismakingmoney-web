@@ -6,6 +6,8 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { AuthProvider } from '@/lib/auth-context';
 import AuthProviderComponent from '@/components/auth-provider';
 import { StructuredData } from '@/components/structured-data';
+import { GoogleAnalytics } from '@/components/google-analytics';
+import ClarityProvider from '@/components/clarity-provider';
 import { generateHreflangAlternates } from '@/lib/hreflang';
 import { getOpenGraphLocale } from '@/i18n/routing';
 import type { Metadata } from 'next';
@@ -67,6 +69,8 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <AuthProvider>
+        <GoogleAnalytics />
+        <ClarityProvider />
         <StructuredData type="website" locale={locale} />
         <StructuredData type="organization" locale={locale} />
         <div className="min-h-screen flex flex-col">

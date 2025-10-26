@@ -14,7 +14,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const { user, setUser, setLoading, recordLogin } = useUserStore();
+  const { user, setUser, setLoading, recordLogin, clearUser } = useUserStore();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => {
       subscription.unsubscribe();
     };
-  }, [setUser, setLoading, recordLogin]);
+  }, [setUser, setLoading, recordLogin, clearUser]);
 
   const signOut = async () => {
     try {
@@ -77,15 +77,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         email: user?.email, 
         timestamp: new Date().toISOString() 
       });
+      
+      // Sign out from Supabase first
       const { error } = await supabase.auth.signOut();
       if (error) {
         console.log('❌ Error signing out:', error);
         throw error;
       }
+      
+      // Clear user from store
+      setUser(null);
+      clearUser();
+      
       console.log('✅ Sign out successful');
+      
+      // Stay on current page, no redirect needed
     } catch (error) {
       console.log('❌ Unexpected error during sign out:', error);
-      throw error;
+      // Even if there's an error, clear the local state
+      setUser(null);
+      clearUser();
     }
   };
 

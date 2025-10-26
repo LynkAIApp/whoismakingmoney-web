@@ -41,3 +41,6 @@ next-env.d.ts
 geoguessr-web
 
 .idea
+docs
+venv
+convert_to_webp.py

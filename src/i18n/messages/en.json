@@ -24,23 +24,53 @@
       "images": ["/og-image.webp"]
     }
   },
-  "main": {
+  "homePage": {
+    "heroTitle": "Unlock Profitable AI Project Blueprints.",
+    "heroSubtitle": "Stop Guessing. Start Building What Works.",
+    "heroDescription": "WhoIsMakingMoney.ai is the definitive database of AI business models. We reverse-engineer successful AI applications—from viral consumer hits to niche B2B SaaS—to provide you with actionable case studies and inspiration for your next profitable build.",
+    "emailCtaTitle": "Get the first analysis, delivered straight to your inbox.",
+    "emailPlaceholder": "Enter your email...",
+    "emailButtonText": "Get First Analysis Free",
+    "emailTrustText": "Join thousands of builders discovering how to make money with AI.",
+    "analysisSectionTitle": "Explore Real AI Case Studies",
+    "analysisSectionDescription": "Discover the mechanics behind proven AI monetization strategies, whether it's subscriptions, credit-based systems, API monetization, or unique direct-to-consumer offerings.",
     "appName": "WhoIsMakingMoney.ai",
     "platformTag": "AI Product Analysis Platform",
-    "heroTitle": "Find Your Next Profitable AI Project",
-    "heroSubtitle": "Stop Guessing. Start Building.",
-    "latestAnalysisTitle": "Deconstruct The Business Model",
-    "latestAnalysisDescription": "Discover the mechanics behind successful AI products, whether they are subscriptions, credit-based, or unique direct-to-consumer offerings."
+    "readMore": "Read More",
+    "comingSoon": "More Articles Coming Soon",
+    "comingSoonDescription": "We're working on bringing you the best AI project analysis content. Stay tuned!",
+    "features": {
+      "caseStudies": {
+        "title": "Real Case Studies",
+        "description": "In-depth analysis of successful AI products with actual revenue data and business models."
+      },
+      "insights": {
+        "title": "Actionable Insights",
+        "description": "Get practical blueprints and strategies you can implement to build your own profitable AI project."
+      },
+      "strategies": {
+        "title": "Growth Strategies",
+        "description": "Learn proven monetization strategies from subscriptions to API-based revenue models."
+      }
+    }
   },
   "LanguageSwitcher": {
     "title": "Language Switcher",
     "english": "English",
     "chinese": "中文 (简体)"
   },
+  "Navbar": {
+    "title": "WhoIsMakingMoney.ai"
+  },
   "Header": {
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "homePage": "Go to WhoIsMakingMoney.ai home page"
+  },
+  "Footer": {
+    "about_title": "About WIMM",
+    "about_description": "WhoIsMakingMoney.ai (WIMM) is an independent research platform dedicated to uncovering the business strategies behind the world's most successful AI products. Our mission is to provide developers and entrepreneurs with actionable insights to build the future.",
+    "copyright": "© 2024 WhoIsMakingMoney.ai. All Rights Reserved."
   },
   "footer": {
     "allRightsReserved": "All Rights Reserved.",
@@ -85,5 +115,11 @@
   "userMenu": {
     "signIn": "Sign In",
     "signOut": "Sign out"
+  },
+  "newsletter": {
+    "title": "Want More Deep Analysis Like This?",
+    "description": "Sign in to unlock all detailed analysis and weekly updated AI business case studies",
+    "signInButton": "Sign In to Access All Content",
+    "benefit": "Once signed in, you'll get access to all in-depth analysis including revenue data, business model breakdowns, growth strategies, and exclusive content."
   }
 }

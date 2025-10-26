@@ -24,13 +24,35 @@
       "images": ["/og-image.webp"]
     }
   },
-  "main": {
+  "homePage": {
+    "heroTitle": "解锁可盈利AI项目蓝图。",
+    "heroSubtitle": "停止猜测。开始构建有效方案。",
+    "heroDescription": "WhoIsMakingMoney.ai是AI商业模式的权威数据库。我们逆向工程成功的AI应用——从病毒式消费者爆款到小众B2B SaaS——为您提供可操作的案例研究和下一个盈利构建的灵感。",
+    "emailCtaTitle": "获取第一份分析报告，直接发送到您的邮箱。",
+    "emailPlaceholder": "输入您的邮箱...",
+    "emailButtonText": "免费获取首份分析",
+    "emailTrustText": "加入数千名构建者，探索如何通过AI赚钱。",
+    "analysisSectionTitle": "探索真实AI案例研究",
+    "analysisSectionDescription": "发现经过验证的AI变现策略背后的机制，无论是订阅制、积分制系统、API变现，还是独特的直接面向消费者服务。",
     "appName": "WhoIsMakingMoney.ai",
     "platformTag": "AI产品分析平台",
-    "heroTitle": "找到你的下一个可盈利AI项目",
-    "heroSubtitle": "别再猜了，直接构建。",
-    "latestAnalysisTitle": "解构商业模式",
-    "latestAnalysisDescription": "探索成功AI产品背后的机制，无论是订阅制、点数制，还是独特的直面消费者模式。"
+    "readMore": "阅读更多",
+    "comingSoon": "更多文章即将推出",
+    "comingSoonDescription": "我们正在为您带来最好的AI项目分析内容。敬请期待！",
+    "features": {
+      "caseStudies": {
+        "title": "真实案例分析",
+        "description": "深入分析成功的AI产品，包含实际收入数据和商业模式。"
+      },
+      "insights": {
+        "title": "可操作的洞察",
+        "description": "获取实用的蓝图和策略，构建您自己的可盈利AI项目。"
+      },
+      "strategies": {
+        "title": "增长策略",
+        "description": "学习经过验证的变现策略，从订阅制到基于API的收入模型。"
+      }
+    }
   },
   "analysis": {
     "pitchbob": {
@@ -57,10 +79,18 @@
     "english": "English",
     "chinese": "中文 (简体)"
   },
+  "Navbar": {
+    "title": "WhoIsMakingMoney.ai"
+  },
   "Header": {
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单",
     "homePage": "前往WhoIsMakingMoney.ai首页"
+  },
+  "Footer": {
+    "about_title": "关于WIMM",
+    "about_description": "WhoIsMakingMoney.ai (WIMM)是一个独立的研究平台，致力于揭示全球最成功AI产品背后的商业策略。我们的使命是为开发者和企业家提供可操作的洞察，构建未来。",
+    "copyright": "© 2024 WhoIsMakingMoney.ai. 版权所有。"
   },
   "footer": {
     "allRightsReserved": "版权所有。",
@@ -105,5 +135,11 @@
   "userMenu": {
     "signIn": "登录",
     "signOut": "退出登录"
+  },
+  "newsletter": {
+    "title": "想要更多这样的深度分析？",
+    "description": "登录后解锁所有详细分析和每周更新的 AI 商业案例",
+    "signInButton": "登录以访问所有内容",
+    "benefit": "登录后，您将获得对所有深度分析的访问权限，包括收入数据、商业模式分析、增长策略等独家内容。"
   }
 }
