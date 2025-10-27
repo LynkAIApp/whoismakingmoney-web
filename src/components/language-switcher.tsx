@@ -32,16 +32,10 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem 
-          className="cursor-pointer"
-          onClick={() => changeLocale("en")}
-        >
+        <DropdownMenuItem onClick={() => changeLocale("en")}>
           {t("english")}
         </DropdownMenuItem>
-        <DropdownMenuItem 
-          className="cursor-pointer"
-          onClick={() => changeLocale("zh")}
-        >
+        <DropdownMenuItem onClick={() => changeLocale("zh")}>
           {t("chinese")}
         </DropdownMenuItem>
       </DropdownMenuContent>

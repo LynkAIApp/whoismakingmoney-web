@@ -29,7 +29,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 py-16">
         {/* Header Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950/30 mb-6">
             <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
@@ -63,53 +63,59 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
 
         {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <Card className="border-2 hover:border-blue-500 transition-colors bg-white dark:bg-gray-800">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
+            <CardHeader className="!flex-row !items-start gap-4 space-y-0">
+              <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                 <Target className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <CardTitle className="text-xl mb-2">{t('features.caseStudies.title')}</CardTitle>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('features.caseStudies.description')}
-              </p>
+              <div className="flex-1">
+                <CardTitle className="text-xl mb-2">{t('features.caseStudies.title')}</CardTitle>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('features.caseStudies.description')}
+                </p>
+              </div>
             </CardHeader>
           </Card>
 
           <Card className="border-2 hover:border-purple-500 transition-colors bg-white dark:bg-gray-800">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
+            <CardHeader className="!flex-row !items-start gap-4 space-y-0">
+              <div className="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
                 <Rocket className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
-              <CardTitle className="text-xl mb-2">{t('features.insights.title')}</CardTitle>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('features.insights.description')}
-              </p>
+              <div className="flex-1">
+                <CardTitle className="text-xl mb-2">{t('features.insights.title')}</CardTitle>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('features.insights.description')}
+                </p>
+              </div>
             </CardHeader>
           </Card>
 
           <Card className="border-2 hover:border-green-500 transition-colors bg-white dark:bg-gray-800">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
+            <CardHeader className="!flex-row !items-start gap-4 space-y-0">
+              <div className="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
                 <TrendingUp className="w-6 h-6 text-green-600 dark:text-green-400" />
               </div>
-              <CardTitle className="text-xl mb-2">{t('features.strategies.title')}</CardTitle>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('features.strategies.description')}
-              </p>
+              <div className="flex-1">
+                <CardTitle className="text-xl mb-2">{t('features.strategies.title')}</CardTitle>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('features.strategies.description')}
+                </p>
+              </div>
             </CardHeader>
           </Card>
         </div>
 
         {/* Section Divider */}
-        <div id="case-studies" className="flex items-center justify-center mb-16 scroll-mt-20">
+        <div id="case-studies" className="flex items-center justify-center mb-8 scroll-mt-20">
           <div className="flex-1 border-t border-gray-300 dark:border-gray-700"></div>
           <h2 className="px-6 text-2xl font-bold text-gray-800 dark:text-gray-200">
             {t('analysisSectionTitle')}
           </h2>
           <div className="flex-1 border-t border-gray-300 dark:border-gray-700"></div>
         </div>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
           {t('analysisSectionDescription')}
         </p>
 

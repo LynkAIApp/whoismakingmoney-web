@@ -6,6 +6,7 @@ import { CalendarDays, Clock, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from '@/i18n/routing';
+import { NewsletterCTA } from './newsletter-cta';
 
 interface BlogPostLayoutProps {
   title: string;
@@ -104,6 +105,11 @@ export function BlogPostLayout({
 
           <div className="max-w-none prose prose-lg dark:prose-invert prose-table:text-sm prose-th:px-3 prose-td:px-3 prose-th:py-2 prose-td:py-2 prose-headings:scroll-mt-20">
             {children}
+          </div>
+
+          {/* Newsletter CTA */}
+          <div className="mt-12">
+            <NewsletterCTA />
           </div>
         </article>
       </div>
