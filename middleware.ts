@@ -39,5 +39,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // 明确排除 API 路由、Next.js 内部路由、静态文件和健康检查
   matcher: ['/((?!api|_next|_vercel|.*\\..*).*?)'],
 };

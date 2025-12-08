@@ -15,6 +15,14 @@ export async function Footer({ locale }: { locale: string }) {
           </div>
           
           <div className="flex items-center space-x-6">
+            <a
+              href="https://geoguessr.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+            >
+              {t('geoguessrAi')}
+            </a>
             <Link
               href={`/${locale}/privacy`}
               className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
