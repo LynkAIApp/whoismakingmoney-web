@@ -1,23 +1,17 @@
 import createNextIntlPlugin from 'next-intl/plugin';
 import createMDX from '@next/mdx';
-import remarkGfm from 'remark-gfm';
 import type { NextConfig } from "next";
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-  options: {
-    remarkPlugins: [remarkGfm],
-  },
+  // MDX options removed to fix Turbopack serialization issue
+  // Plugins are configured in next-mdx-remote instead
 });
 
 const nextConfig: NextConfig = {
   devIndicators: false,
   reactStrictMode: false,
   output: "standalone",
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
   compress: false,
   poweredByHeader: false,
   env: {
